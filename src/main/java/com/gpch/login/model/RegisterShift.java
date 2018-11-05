@@ -12,12 +12,13 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "role")
-public class Role {
+@Table(name = "employee_shift")
+class EmployeeShift {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "role_id")
     private Integer id;
-    @Column(name = "role")
-    private String role;
+    @ManyToOne
+    private Shift shift;
+    @ManyToOne
+    private Employee employee;
 }

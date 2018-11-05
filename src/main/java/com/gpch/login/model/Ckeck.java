@@ -6,18 +6,22 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "role")
-public class Role {
+@Table(name = "check")
+public class Ckeck {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "role_id")
     private Integer id;
-    @Column(name = "role")
-    private String role;
+    @Column(name= "checkin")
+    private Date checkin;
+    @Column(name = "checkout")
+    private Date checkout;
+    @ManyToOne
+    private Employee employee;
 }
