@@ -14,10 +14,10 @@ import javax.persistence.*;
 @Entity
 public class Shift {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column
-    private String day;
+    private int day;
     @Column
     private Integer kind;
 }

@@ -13,12 +13,14 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Entity
 @Table(name = "employee_shift")
-class EmployeeShift {
+public class  EmployeeShift{
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @ManyToOne
     private Shift shift;
     @ManyToOne
     private Employee employee;
+    @Column(name = "is_active", nullable = false,columnDefinition = "boolean default false")
+    private Boolean active;
 }
