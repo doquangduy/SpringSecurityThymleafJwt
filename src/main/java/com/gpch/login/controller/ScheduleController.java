@@ -16,6 +16,6 @@ public class ScheduleController {
     @GetMapping("/admin/schedule")
     public String getSchedule(Model model){
         List<EmployeeShift> list = employeeShiftService.getAllRegistor();
-        return "admin/home";
+        return "admin/schedule";
     }
 }
